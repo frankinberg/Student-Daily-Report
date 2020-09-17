@@ -24,8 +24,15 @@ namespace StudentDailyReport
 
             Console.WriteLine("What page number?");
             string pageNumber = Console.ReadLine();
-            int pageNum = Convert.ToInt32(pageNumber);
-            Console.WriteLine(pageNum);
+            if (int.TryParse(pageNumber, out int pageNum))
+            {
+                pageNum = Convert.ToInt32(pageNumber);
+                Console.WriteLine(pageNum);
+            }
+            else
+            {
+                Console.WriteLine("Please put a page number only.");
+            }
 
             Console.WriteLine("Do you need help with anything?  Please answer \"true\" or \"false\"");
             string needsHelp = Console.ReadLine();
@@ -39,8 +46,6 @@ namespace StudentDailyReport
 
             }
            
-           
-
             Console.WriteLine("Were there any positive experiences you'd like to share? \nPlease give specifics.");
             string postiveExperiences = Console.ReadLine();
             Console.WriteLine(postiveExperiences);
@@ -51,8 +56,14 @@ namespace StudentDailyReport
 
             Console.WriteLine("How many hours did you study today?");
             string hoursStudied = Console.ReadLine();
-            int timeStudied = Convert.ToInt32(hoursStudied);
-            Console.WriteLine(timeStudied);
+            if (int.TryParse(hoursStudied, out int timeStudied))
+            {
+                timeStudied = Convert.ToInt32(hoursStudied);
+                Console.WriteLine(timeStudied);
+            } else
+            {
+                Console.WriteLine("Please put a value and round to the nearest hour.");
+            }
 
             Console.WriteLine("Thank you for your answers.  An instructor will respond to this shortly.  Have a great day!");
 
